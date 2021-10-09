@@ -1,13 +1,13 @@
 {
     "name": "@bardoui/vdirective",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "private": false,
     "description": "Directives for vue 3",
     "license": "ISC",
     "main": "dist/vdirective.cjs.js",
     "module": "dist/vdirective.esm.js",
     "unpkg": "dist/vdirective.global.js",
-    "typings": "dist/vdirective.d.ts",
+    "typings": "dist/vDirective.d.ts",
     "scripts": {
         "serve": "vue-cli-service serve demo/main.ts",
         "build": "rollup -c",

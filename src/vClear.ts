@@ -29,6 +29,9 @@ export const VClear: ObjectDirective<HTMLInputElement> = {
                     }
                 }
                 el.setRangeText("", start, end);
+                el.dispatchEvent(
+                    new Event("input", { bubbles: true, cancelable: true })
+                );
                 ev.preventDefault();
                 ev.stopImmediatePropagation();
             }
