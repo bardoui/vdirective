@@ -7,6 +7,6 @@ import { getInput } from "./utils";
 export const VAutoFocus: ObjectDirective<any> = {
     mounted(_el) {
         const el = getInput(_el);
-        el.focus();
+        el && el.focus();
     }
 };
