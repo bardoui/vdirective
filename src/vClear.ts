@@ -1,10 +1,13 @@
 import { ObjectDirective } from "@vue/runtime-core";
+import { getInput } from "./utils";
 
 /**
  * Clear input value by escape key
  */
-export const VClear: ObjectDirective<HTMLInputElement> = {
-    mounted(el, { value }) {
+export const VClear: ObjectDirective<any> = {
+    mounted(_el, { value }) {
+        const el = getInput(_el);
+        if (!el) return;
         const separator = value || "";
         el.addEventListener("keydown", (ev: KeyboardEvent) => {
             if (ev.code === "Escape") {
@@ -32,8 +35,6 @@ export const VClear: ObjectDirective<HTMLInputElement> = {
                 el.dispatchEvent(
                     new Event("input", { bubbles: true, cancelable: true })
                 );
-                ev.preventDefault();
-                ev.stopImmediatePropagation();
             }
         });
     }

@@ -1,10 +1,13 @@
 import { ObjectDirective } from "@vue/runtime-core";
+import { getInput } from "./utils";
 
 /**
  * Auto select input value on focus or up/down keys
  */
-export const VSelect: ObjectDirective<HTMLInputElement> = {
-    mounted(el, { value }) {
+export const VSelect: ObjectDirective<any> = {
+    mounted(_el, { value }) {
+        const el = getInput(_el);
+        if (!el) return;
         const separator = value || "";
         el.addEventListener("click", () => {
             if (

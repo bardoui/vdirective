@@ -45,6 +45,20 @@ createApp(App)
   .mount("#app");
 ```
 
+**Note**: all directive can added to parent element of input (useful for custom component).
+
+```html
+<!-- MyInput.Vue -->
+<div class="input">
+  <label>{{ title }}</label>
+  <input type="text" />
+</div>
+
+<!-- App.Vue -->
+
+<MyInput v-focus />
+```
+
 ## Auto Focus
 
 Focus element on element mounted.

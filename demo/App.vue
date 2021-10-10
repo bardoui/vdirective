@@ -43,13 +43,19 @@
         />
         <input type="text" value="2020/01/03" v-select="'/'" />
     </div>
+
+    <section>
+        <h1>Nested Component</h1>
+        <my-input v-clear="' '" title="Name" v-select="' '" />
+    </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-
+import MyInput from "./MyInput.vue";
 export default defineComponent({
-    name: "App"
+    name: "App",
+    components: { MyInput }
 });
 </script>
 
